@@ -10,15 +10,10 @@ namespace PieShop.App.Pages
 {
     public partial class EmployeeOverview
     {
-
         [Inject]
         public IEmployeeDataService EmployeeDataService { get; set; }
 
         public IEnumerable<Employee> Employees { get; set; }
-
-        private List<Country> Countries { get; set; }
-
-        private List<JobCategory> JobCategories { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
