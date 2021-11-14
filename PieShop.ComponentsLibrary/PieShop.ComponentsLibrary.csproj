@@ -22,4 +22,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PieShop.Shared\PieShop.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
