@@ -8,9 +8,9 @@ namespace PieShop.Api.Models
 {
     public class JobCategoryRepository: IJobCategoryRepository
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly PieShopContext _appDbContext;
 
-        public JobCategoryRepository(AppDbContext appDbContext)
+        public JobCategoryRepository(PieShopContext appDbContext)
         {
             _appDbContext = appDbContext;
         }
