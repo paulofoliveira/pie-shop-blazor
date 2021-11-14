@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PieShop.Api", "PieShop.Api\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PieShop.ComponentsLibrary", "PieShop.ComponentsLibrary\PieShop.ComponentsLibrary.csproj", "{15886DD5-85A2-4F90-81B7-8899D19FDB0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PieShop.Client", "PieShop.Client\PieShop.Client.csproj", "{1670258A-2DF0-47B5-B4AF-A87FA4181DA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PieShop.Client", "PieShop.Client\PieShop.Client.csproj", "{1670258A-2DF0-47B5-B4AF-A87FA4181DA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PieShop.Server", "PieShop.Server\PieShop.Server.csproj", "{07A37F23-710E-4367-9D85-6717031E19FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1670258A-2DF0-47B5-B4AF-A87FA4181DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1670258A-2DF0-47B5-B4AF-A87FA4181DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1670258A-2DF0-47B5-B4AF-A87FA4181DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A37F23-710E-4367-9D85-6717031E19FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A37F23-710E-4367-9D85-6717031E19FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A37F23-710E-4367-9D85-6717031E19FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A37F23-710E-4367-9D85-6717031E19FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
