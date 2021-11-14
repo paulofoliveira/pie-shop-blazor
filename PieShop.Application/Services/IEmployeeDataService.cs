@@ -11,5 +11,7 @@ namespace PieShop.Application.Services
         Task<Employee> AddEmployee(Employee employee);
         Task UpdateEmployee(Employee employee);
         Task DeleteEmployee(int employeeId);
+        Task<IEnumerable<Employee>> GetLongEmployeeList();
+        Task<IEnumerable<Employee>> GetTakeLongEmployeeList(int startIndex, int count);
     }
 }
