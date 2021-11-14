@@ -15,4 +15,8 @@
     <ProjectReference Include="..\PieShop.Application\PieShop.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <BlazorWebAssemblyLazyLoad Include="PieShop.ComponentsLibrary.dll" />
+  </ItemGroup>
+
 </Project>
