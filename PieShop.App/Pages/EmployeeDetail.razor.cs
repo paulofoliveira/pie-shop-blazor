@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
-using PieShop.App.Services;
+using PieShop.Application.Services;
 using PieShop.ComponentsLibrary.Map;
 using PieShop.Shared;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PieShop.App.Pages
+namespace PieShop.Application.Pages
 {
     public partial class EmployeeDetail
     {

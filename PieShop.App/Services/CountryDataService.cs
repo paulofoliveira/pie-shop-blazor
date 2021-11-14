@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace PieShop.App.Services
+namespace PieShop.Application.Services
 {
     public class CountryDataService : ICountryDataService
     {
