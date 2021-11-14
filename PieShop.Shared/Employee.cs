@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PieShop.Shared
 {
@@ -36,5 +37,10 @@ namespace PieShop.Shared
         public JobCategory JobCategory { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+
+        [NotMapped]
+        public byte[] ImageContent { get; set; }
+
+        public string ImageName { get; set; }
     }
 }
