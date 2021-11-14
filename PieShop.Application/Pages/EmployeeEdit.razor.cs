@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using PieShop.Application.Services;
 using PieShop.Shared;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -67,6 +69,17 @@ namespace PieShop.Application.Pages
 
             if (Employee.EmployeeId == 0)
             {
+                if (_selectedFiles != null)
+                {
+                    var file = _selectedFiles[0];
+                    using var stream = file.OpenReadStream();
+                    using var memoryStream = new MemoryStream();
+                    await stream.CopyToAsync(memoryStream);
+
+                    Employee.ImageName = file.Name;
+                    Employee.ImageContent = memoryStream.ToArray();
+                }
+
                 var addedEmployee = await EmployeeDataService.AddEmployee(Employee);
                 if (addedEmployee != null)
                 {
@@ -109,6 +122,14 @@ namespace PieShop.Application.Pages
         protected void NavigateToOverview()
         {
             NavigationManager.NavigateTo("/employeeoverview");
+        }
+
+        private IReadOnlyList<IBrowserFile> _selectedFiles;
+        private void OnInputFileChange(InputFileChangeEventArgs e)
+        {
+            _selectedFiles = e.GetMultipleFiles();
+            Message = $"{_selectedFiles.Count} file(s) selected";
+            StateHasChanged();
         }
     }
 }

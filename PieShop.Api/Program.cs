@@ -13,7 +13,7 @@ namespace PieShop.Api
 
             using (var scope = host.Services.CreateScope())
             {
-                using var context = scope.ServiceProvider.GetService<AppDbContext>();
+                using var context = scope.ServiceProvider.GetService<PieShopContext>();
                 context.Database.EnsureCreated();
             }
 
