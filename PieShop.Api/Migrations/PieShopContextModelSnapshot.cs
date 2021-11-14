@@ -116,6 +116,9 @@ namespace PieShop.Api.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("JobCategoryId")
                         .HasColumnType("int");
 
