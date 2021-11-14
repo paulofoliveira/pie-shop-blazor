@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PieShop.ComponentsLibrary",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PieShop.Client", "PieShop.Client\PieShop.Client.csproj", "{1670258A-2DF0-47B5-B4AF-A87FA4181DA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PieShop.Server", "PieShop.Server\PieShop.Server.csproj", "{07A37F23-710E-4367-9D85-6717031E19FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PieShop.Server", "PieShop.Server\PieShop.Server.csproj", "{07A37F23-710E-4367-9D85-6717031E19FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

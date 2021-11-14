@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using PieShop.Shared;
 
@@ -68,6 +69,45 @@ namespace PieShop.Api.Models
 
             _appDbContext.Employees.Remove(foundEmployee);
             _appDbContext.SaveChanges();
+        }
+
+        public IEnumerable<Employee> GetLongEmployeeList()
+        {
+            var Employees = new List<Employee>();
+            for (int i = 0; i < 1000; i++)
+            {
+                var employee = new Employee()
+                {
+                    EmployeeId = i,
+                    FirstName = RandomString(10),
+                    LastName = RandomString(18)
+                };
+                Employees.Add(employee);
+            }
+            return Employees;
+        }
+        public IEnumerable<Employee> GetTakeLongEmployeeList(int request, int count)
+        {
+            var Employees = new List<Employee>();
+            for (int i = 0; i < count; i++)
+            {
+                var employee = new Employee()
+                {
+                    EmployeeId = i,
+                    FirstName = RandomString(10),
+                    LastName = RandomString(18)
+                };
+                Employees.Add(employee);
+            }
+            return Employees;
+        }
+
+        private readonly Random random = new();
+        private string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

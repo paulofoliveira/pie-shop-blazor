@@ -15,6 +15,12 @@ nav {
     border-color: #a593c2;
 }
 
+.virtualized {
+    overflow: auto;
+    width: 100%;
+    height: 600px;
+}
+
 #logo {
     width: 80%;
 }
