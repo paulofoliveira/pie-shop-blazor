@@ -24,7 +24,12 @@ namespace PieShop.App.Pages
 
             MapMarkers = new List<Marker>
             {
-                new Marker{Description = $"{Employee.FirstName} {Employee.LastName}",  ShowPopup = false, X = Employee.Longitude, Y = Employee.Latitude}
+                new Marker {
+                    Description = $"{Employee.FirstName} {Employee.LastName}",
+                    ShowPopup = false,
+                    X = Employee.Longitude,
+                    Y = Employee.Latitude
+                }
             };
         }
     }
