@@ -7,9 +7,9 @@ namespace PieShop.Api.Models
 {
     public class EmployeeRepository : IEmployeeRepository
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly PieShopContext _appDbContext;
 
-        public EmployeeRepository(AppDbContext appDbContext)
+        public EmployeeRepository(PieShopContext appDbContext)
         {
             _appDbContext = appDbContext;
         }

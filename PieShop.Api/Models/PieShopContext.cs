@@ -4,22 +4,16 @@ using System;
 
 namespace PieShop.Api.Models
 {
-    public class AppDbContext : DbContext
+    public class PieShopContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        {
-
-        }
-
+        public PieShopContext(DbContextOptions<PieShopContext> options) : base(options) { }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<JobCategory> JobCategories { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            //seed categories
             modelBuilder.Entity<Country>().HasData(new Country { CountryId = 1, Name = "Belgium" });
             modelBuilder.Entity<Country>().HasData(new Country { CountryId = 2, Name = "Germany" });
             modelBuilder.Entity<Country>().HasData(new Country { CountryId = 3, Name = "Netherlands" });
@@ -62,7 +56,6 @@ namespace PieShop.Api.Models
                 Latitude = 50.8503,
                 Longitude = 4.3517
             });
-
             modelBuilder.Entity<Employee>().HasData(new Employee
             {
                 CountryId = 2,

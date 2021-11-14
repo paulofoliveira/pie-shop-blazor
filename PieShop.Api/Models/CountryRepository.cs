@@ -6,9 +6,9 @@ namespace PieShop.Api.Models
 {
     public class CountryRepository : ICountryRepository
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly PieShopContext _appDbContext;
 
-        public CountryRepository(AppDbContext appDbContext)
+        public CountryRepository(PieShopContext appDbContext)
         {
             _appDbContext = appDbContext;
         }

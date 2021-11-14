@@ -9,9 +9,9 @@ using PieShop.Api.Models;
 
 namespace PieShop.Api.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    [Migration("20210626160655_Initial")]
-    partial class Initial
+    [DbContext(typeof(PieShopContext))]
+    [Migration("20211114183302_EmployeeImageAdded")]
+    partial class EmployeeImageAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -97,22 +97,29 @@ namespace PieShop.Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ExitDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("JobCategoryId")
                         .HasColumnType("int");
@@ -121,7 +128,9 @@ namespace PieShop.Api.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<double>("Latitude")
                         .HasColumnType("float");
