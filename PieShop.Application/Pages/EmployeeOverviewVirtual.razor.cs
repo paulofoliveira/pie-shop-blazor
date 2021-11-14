@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web.Virtualization;
 using PieShop.Application.Services;
 using PieShop.Shared;
 using System;
@@ -19,6 +20,19 @@ namespace PieShop.Application.Pages
         protected async override Task OnInitializedAsync()
         {
             Employees = (await EmployeeDataService.GetLongEmployeeList()).ToList();
+        }
+
+        private float ItemHeight = 50;
+
+        public async ValueTask<ItemsProviderResult<Employee>> LoadEmployees(ItemsProviderRequest request)
+        {
+            // Assumimos que chamamos a API para retorno do total em chamada separada
+            var totalNumberOfEmployees = 1000;
+
+            var numberOfEmployees = Math.Min(request.Count, totalNumberOfEmployees - request.StartIndex);
+            var EmployeeListItems = await EmployeeDataService.GetTakeLongEmployeeList(request.StartIndex, numberOfEmployees);
+
+            return new ItemsProviderResult<Employee>(EmployeeListItems, totalNumberOfEmployees);
         }
     }
 }

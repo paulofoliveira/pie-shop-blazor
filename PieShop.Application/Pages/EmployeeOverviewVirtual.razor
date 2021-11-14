@@ -8,23 +8,33 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Employee ID</th>
-                <th>First name</th>
-                <th>Last name</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach(var employee in Employees)
-            {
+    <div class="virtualized">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@employee.EmployeeId</td>
-                    <td>@employee.FirstName</td>
-                    <td>@employee.LastName</td>
+                    <th>Employee ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <Virtualize ItemsProvider="LoadEmployees" ItemSize="ItemHeight">
+                    <ItemContent>
+                        <tr @key="context.GetHashCode()">
+                            <td>@context.EmployeeId</td>
+                            <td>@context.FirstName</td>
+                            <td>@context.LastName</td>
+                        </tr>
+                    </ItemContent>
+                    <Placeholder>
+                        <tr>
+                            <td>Loading...</td>
+                            <td>Loading...</td>
+                            <td>Loading...</td>
+                        </tr>
+                    </Placeholder>
+                </Virtualize>
+            </tbody>
+        </table>
+    </div>
 }
