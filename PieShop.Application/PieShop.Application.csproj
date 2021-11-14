@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PieShop.ComponentsLibrary\PieShop.ComponentsLibrary.csproj" />
-    <ProjectReference Include="..\PieShop.Shared\PieShop.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

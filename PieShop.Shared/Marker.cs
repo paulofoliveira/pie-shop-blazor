@@ -1,4 +1,4 @@
-﻿namespace PieShop.ComponentsLibrary.Map
+﻿namespace PieShop.Shared
 {
     public class Marker
     {
