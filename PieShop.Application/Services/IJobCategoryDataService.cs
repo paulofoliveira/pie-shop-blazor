@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PieShop.App.Services
+namespace PieShop.Application.Services
 {
     public interface IJobCategoryDataService
     {

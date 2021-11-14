@@ -1,8 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,12 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PieShop.ComponentsLibrary\PieShop.ComponentsLibrary.csproj" />
-    <ProjectReference Include="..\PieShop.Shared\PieShop.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+    <ProjectReference Include="..\PieShop.Application\PieShop.Application.csproj" />
   </ItemGroup>
 
 </Project>

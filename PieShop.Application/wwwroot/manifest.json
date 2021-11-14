@@ -1,6 +1,6 @@
 {
-  "name": "PieShop.App",
-  "short_name": "PieShop.App",
+  "name": "PieShop.Application",
+  "short_name": "PieShop.Application",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",

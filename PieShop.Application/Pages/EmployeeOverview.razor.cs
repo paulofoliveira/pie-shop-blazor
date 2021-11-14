@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components;
-using PieShop.App.Components;
-using PieShop.App.Services;
+using PieShop.Application.Components;
+using PieShop.Application.Services;
 using PieShop.Shared;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PieShop.App.Pages
+namespace PieShop.Application.Pages
 {
     public partial class EmployeeOverview
     {

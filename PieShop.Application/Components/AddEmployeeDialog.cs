@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
-using PieShop.App.Services;
+using PieShop.Application.Services;
 using PieShop.Shared;
 using System;
 using System.Threading.Tasks;
 
-namespace PieShop.App.Components
+namespace PieShop.Application.Components
 {
     public partial class AddEmployeeDialog
     {
