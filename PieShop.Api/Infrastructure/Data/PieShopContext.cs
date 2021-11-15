@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PieShop.Shared;
 using System;
+using BC = BCrypt.Net.BCrypt;
 
 namespace PieShop.Api.Infrastructure.Data
 {
@@ -10,6 +11,7 @@ namespace PieShop.Api.Infrastructure.Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<JobCategory> JobCategories { get; set; }
+        public DbSet<User> Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -79,6 +81,8 @@ namespace PieShop.Api.Infrastructure.Data
                 Latitude = 50.8503,
                 Longitude = 4.3517
             });
+
+            modelBuilder.Entity<User>().HasData(new User() { UserId = 1, Email = "paulo.fdo@hotmail.com", Password = BC.HashPassword("Pa$$w0rd") });
         }
     }
 }
