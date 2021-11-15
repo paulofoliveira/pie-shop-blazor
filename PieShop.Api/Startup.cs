@@ -1,10 +1,14 @@
-using PieShop.Api.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using PieShop.Api.Infrastructure.Authentication;
+using PieShop.Api.Models;
+using System.Text;
 
 namespace PieShop.Api
 {
@@ -27,9 +31,32 @@ namespace PieShop.Api
 
             services.AddHttpContextAccessor();
 
-			services.AddCors(options =>
+            services.AddCors(options =>
             {
                 options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
+
+            var jwtSettings = new JwtSettings();
+            Configuration.Bind(nameof(JwtSettings), jwtSettings);
+
+            services.AddSingleton(jwtSettings);
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtSettings.ValidIssuer,
+                    ValidAudience = jwtSettings.ValidAudience,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecurityKey))
+                };
             });
 
             services.AddControllers();
@@ -47,6 +74,7 @@ namespace PieShop.Api
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseCors("Open");

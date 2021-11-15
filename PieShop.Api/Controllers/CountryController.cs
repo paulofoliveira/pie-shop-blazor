@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PieShop.Api.Models;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace PieShop.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CountryController : Controller
     {
         private readonly ICountryRepository _countryRepository;
@@ -16,14 +16,12 @@ namespace PieShop.Api.Controllers
             _countryRepository = countryRepository;
         }
 
-        // GET: api/<controller>
         [HttpGet]
         public IActionResult GetCountries()
         {
             return Ok(_countryRepository.GetAllCountries());
         }
 
-        // GET api/<controller>/5
         [HttpGet("{id}")]
         public IActionResult GetCountryById(int id)
         {
