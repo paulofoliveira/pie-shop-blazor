@@ -1,9 +1,9 @@
-﻿using System;
+﻿using PieShop.Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using PieShop.Shared;
 
-namespace PieShop.Api.Models
+namespace PieShop.Api.Infrastructure.Data
 {
     public class EmployeeRepository : IEmployeeRepository
     {

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using PieShop.Shared;
+﻿using PieShop.Shared;
+using System.Collections.Generic;
 
-namespace PieShop.Api.Models
+namespace PieShop.Api.Infrastructure.Data
 {
     public interface IJobCategoryRepository
     {

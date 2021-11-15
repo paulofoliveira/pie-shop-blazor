@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using PieShop.Shared;
+using System.Collections.Generic;
 using System.Linq;
-using PieShop.Shared;
 
-namespace PieShop.Api.Models
+namespace PieShop.Api.Infrastructure.Data
 {
     public class CountryRepository : ICountryRepository
     {

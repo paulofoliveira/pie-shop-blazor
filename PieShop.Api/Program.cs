@@ -1,7 +1,7 @@
-using PieShop.Api.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PieShop.Api.Infrastructure.Data;
 
 namespace PieShop.Api
 {

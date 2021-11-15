@@ -1,10 +1,9 @@
-﻿using PieShop.Api.Models;
-using PieShop.Shared;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using PieShop.Api.Infrastructure.Data;
+using PieShop.Shared;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
 
 namespace PieShop.Api.Controllers
 {
@@ -60,7 +59,7 @@ namespace PieShop.Api.Controllers
                 await fileStream.WriteAsync(employee.ImageContent, 0, employee.ImageContent.Length);
 
                 employee.ImageName = $"https://{currentUrl}/uploads/{employee.ImageName}";
-            }        
+            }
 
             var createdEmployee = _employeeRepository.AddEmployee(employee);
 

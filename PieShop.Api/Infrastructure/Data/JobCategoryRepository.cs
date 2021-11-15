@@ -1,12 +1,10 @@
-﻿using System;
+﻿using PieShop.Shared;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using PieShop.Shared;
 
-namespace PieShop.Api.Models
+namespace PieShop.Api.Infrastructure.Data
 {
-    public class JobCategoryRepository: IJobCategoryRepository
+    public class JobCategoryRepository : IJobCategoryRepository
     {
         private readonly PieShopContext _appDbContext;
 

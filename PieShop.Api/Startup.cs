@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using PieShop.Api.Infrastructure.Authentication;
-using PieShop.Api.Models;
+using PieShop.Api.Infrastructure.Data;
 using System.Text;
 
 namespace PieShop.Api

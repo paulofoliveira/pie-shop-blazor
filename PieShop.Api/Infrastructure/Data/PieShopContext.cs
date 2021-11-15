@@ -2,7 +2,7 @@
 using PieShop.Shared;
 using System;
 
-namespace PieShop.Api.Models
+namespace PieShop.Api.Infrastructure.Data
 {
     public class PieShopContext : DbContext
     {
@@ -56,6 +56,7 @@ namespace PieShop.Api.Models
                 Latitude = 50.8503,
                 Longitude = 4.3517
             });
+
             modelBuilder.Entity<Employee>().HasData(new Employee
             {
                 CountryId = 2,
