@@ -9,8 +9,12 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
+// Read more: https://jasonwatmore.com/post/2021/05/27/net-5-hash-and-verify-passwords-with-bcrypt
+
 namespace PieShop.Api.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class AccountController : Controller
     {
         private readonly IUserRepository _userRepository;
@@ -27,7 +31,7 @@ namespace PieShop.Api.Controllers
         {
             var user = await _userRepository.FindByEmail(userForAuth.Email);
 
-            if (user == null || !BCrypt.Net.BCrypt.Verify(user.Password, user.Password))
+            if (user == null || !BCrypt.Net.BCrypt.Verify(userForAuth.Password, user.Password))
                 return Unauthorized(new AuthResponseDto() { ErrorMessage = "Invalid Authentication" });
 
             var signinCredentials = GetSigningCredentials();
